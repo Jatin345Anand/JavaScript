@@ -1,0 +1,299 @@
+var j={'s':'JATIN ANAND','s1':{'n':2,'n1':{'t':22},'n2':{'t':33}}}
+undefined
+j
+{s: "JATIN ANAND", s1: {…}}s: "JATIN ANAND"s1: {n: 2, n1: {…}, n2: {…}}__proto__: Object
+j.s1
+{n: 2, n1: {…}, n2: {…}}
+j.s1.n
+2
+j.s1.valueOf()
+{n: 2, n1: {…}, n2: {…}}n: 2n1: {t: 22}n2: {t: 33}__proto__: Object
+JSON.stringify(j)
+"{"s":"JATIN ANAND","s1":{"n":2,"n1":{"t":22},"n2":{"t":33}}}"
+jsoni =JSON.stringify(j)
+"{"s":"JATIN ANAND","s1":{"n":2,"n1":{"t":22},"n2":{"t":33}}}"
+jsoni.charAt(s)
+VM1374:1 Uncaught ReferenceError: s is not defined
+    at <anonymous>:1:14
+(anonymous) @ VM1374:1
+jsoni.length
+60
+jsoni.charAt(1)
+"""
+jsoni.charAt(2)
+"s"
+jsoni.charAt(0)
+"{"
+jsoni.charAt(3)
+"""
+jsoni.charAt(4)
+":"
+Navigated to chrome-extension://nolfchbaajenmoghacolnbilmdfjeabi/index.html
+Navigated to about:blank
+var en ='00110102715'
+undefined
+en
+"00110102715"
+en.charAt(3)
+"1"
+en.length
+11
+en.substring(3,6)
+"101"
+en.substring(6,9)
+"027"
+en.substring(9,11)
+"15"
+en.substring(0,3)
+"001"
+JSON
+JSON {parse: ƒ, stringify: ƒ, Symbol(Symbol.toStringTag): "JSON"}
+j;
+VM28918:1 Uncaught ReferenceError: j is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM28918:1
+var o = {'e':'1233','n':'1234','e':{}}
+undefined
+for (var i=0;i<o.length;i++){console.log(o[i])}
+undefined
+for (var i=0;i<o.length;i++){console.log(o[i])}
+undefined
+o
+{e: {…}, n: "1234"}e: {}n: "1234"__proto__: Object
+var o = {'e':'1233','n':'1234','p':{}}
+undefined
+o
+{e: "1233", n: "1234", p: {…}}
+for (var i=0;i<o.length;i++){console.log(o)}
+undefined
+for (var i=0;i<o.length;i++){console.log(i);}
+undefined
+for (var i=0;i<5;i++){console.log(i);}
+VM29459:1 0
+VM29459:1 1
+VM29459:1 2
+VM29459:1 3
+VM29459:1 4
+undefined
+o.length
+undefined
+Object.length(o)
+VM29533:1 Uncaught TypeError: Object.length is not a function
+    at <anonymous>:1:8
+(anonymous) @ VM29533:1
+Object.length
+1
+Object.assign(o)
+{e: "1233", n: "1234", p: {…}}
+Object.length
+1
+Object.keys(o).length
+3
+for (let [k,v] of Object.entries(o)){console.log(k,v);}
+VM29902:1 e 1233
+VM29902:1 n 1234
+VM29902:1 p {}
+undefined
+for (let [k,v] of Object.entries(o)){console.log(typeof(k),typeof(v));}
+2VM30057:1 string string
+VM30057:1 string object
+undefined
+for (let [k,v] of Object.entries(o)){if(k=='e'){console.log(typeof(k),typeof(v),k,v);}}
+VM30275:1 string string e 1233
+undefined
+var SemesterExternal={
+    'sn':'',
+    'subjectname':'',
+    'subjectid':'',
+    'subjectcode':'',
+    'subjectexternalm':'',
+    'subjectwholem':'100'
+}
+var SemesterExternalt={
+    'sn':'',
+    'subjectname':'',
+    'subjectid':'',
+    'subjectcode':'',
+    'subjectinternalm':'',
+    'subjectwholem':'75'
+}
+var SemesterInternalp={
+    'sn':'',
+    'subjectname':'',
+    'subjectid':'',
+    'subjectcode':'',
+    'subjectinternalm':'',
+    'subjectwholem':'40'
+}
+var SemesterExternalp={
+    'sn':'',
+    'subjectname':'',
+    'subjectid':'',
+    'subjectcode':'',
+    'subjectinternalm':'',
+    'subjectwholem':'60'
+}
+var SemesterInternalt={
+    'sn':'',
+    'subjectname':'',
+    'subjectid':'',
+    'subjectcode':'',
+    'subjectinternalm':'',
+    'subjectinternalm1':'',
+    'subjectinternalm2':'',
+    'subjectinternalm3':'',
+    'subjectwholem':'25'
+
+}
+undefined
+var SemesterData={
+    
+}
+undefined
+for (var i=1;i<=3;i++){
+  var A=[SemesterExternal,SemesterExternalt,SemesterExternalp,SemesterInternalp,SemesterInternalt]
+  var semn='0';
+  var v=[(semn+i),A]
+  SemesterData{'key'+i}=v;
+}
+
+VM40332:5 Uncaught SyntaxError: Unexpected token {
+for (var i=1;i<=3;i++){
+  var A=[SemesterExternal,SemesterExternalt,SemesterExternalp,SemesterInternalp,SemesterInternalt];
+  var semn='0';
+  var v=[(semn+''+i),A];
+  SemesterData{'key'+i}=v;
+}
+
+VM40371:5 Uncaught SyntaxError: Unexpected token {
+for (var i=1;i<=3;i++){
+  var A=[SemesterExternal,SemesterExternalt,SemesterExternalp,SemesterInternalp,SemesterInternalt];
+  var semn='0';
+  var v=[(semn+''+i),A];
+  SemesterData['key'+i]=v;
+}
+
+(2) ["03", Array(5)]0: "03"1: Array(5)0: sn: ""subjectcode: ""subjectexternalm: ""subjectid: ""subjectname: ""subjectwholem: "100"__proto__: Object1: sn: ""subjectcode: ""subjectid: ""subjectinternalm: ""subjectname: ""subjectwholem: "75"__proto__: Object2: {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectinternalm: "", …}3: {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectinternalm: "", …}4: {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectinternalm: "", …}length: 5__proto__: Array(0)length: 2__proto__: Array(0)
+Object.keys(SemesterData)
+(3) ["key1", "key2", "key3"]
+Object.values(SemesterData)
+(3) [Array(2), Array(2), Array(2)]0: Array(2)0: "01"1: Array(5)0: {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectexternalm: "", …}sn: ""subjectcode: ""subjectexternalm: ""subjectid: ""subjectname: ""subjectwholem: "100"__proto__: Object1: {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectinternalm: "", …}2: {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectinternalm: "", …}3: {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectinternalm: "", …}4: {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectinternalm: "", …}length: 5__proto__: Array(0)length: 2__proto__: Array(0)1: (2) ["02", Array(5)]2: (2) ["03", Array(5)]length: 3__proto__: Array(0)
+for (var k in SemesterData){
+ console.log(SemesterData[k][1]);
+}
+VM41342:2 (5) [{…}, {…}, {…}, {…}, {…}]0: {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectexternalm: "", …}1: {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectinternalm: "", …}2: {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectinternalm: "", …}3: {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectinternalm: "", …}4: {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectinternalm: "", …}length: 5__proto__: Array(0)
+VM41342:2 (5) [{…}, {…}, {…}, {…}, {…}]
+VM41342:2 (5) [{…}, {…}, {…}, {…}, {…}]
+undefined
+for (var k in SemesterData){
+ console.log(SemesterData[k][1][0]);
+}
+VM41366:2 {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectexternalm: "", …}sn: ""subjectcode: ""subjectexternalm: ""subjectid: ""subjectname: ""subjectwholem: "100"__proto__: Object
+VM41366:2 {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectexternalm: "", …}
+VM41366:2 {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectexternalm: "", …}
+undefined
+for (var k in SemesterData){
+ console.log(SemesterData[k][1][0].subjectexternalm);
+}
+3VM41454:2 
+undefined
+for (var k in SemesterData){
+ console.log(SemesterData[k][1][0].subjectwholem);
+}
+3VM41580:2 100
+undefined
+for (var k in SemesterData){
+ console.log(typeof(SemesterData[k][1][0]));
+}
+3VM42308:2 object
+undefined
+var s='19';
+undefined
+s
+"19"
+parseInt(s)
+19
+var s1=parseInt(s)
+undefined
+s1
+19
+s
+"19"
+eval(s+s)
+1919
+eval(s1+s1)
+38
+eval(parseInt('234')+parseInt('3455))
+VM46599:1 Uncaught SyntaxError: Invalid or unexpected token
+eval(parseInt('234')+parseInt('3455));
+VM46608:1 Uncaught SyntaxError: Invalid or unexpected token
+eval(parseInt('234')+parseInt('3455'));
+3689
+toString(3689)
+"[object Undefined]"
+eval(parseInt('234')+parseInt('3455))+'';
+VM46757:1 Uncaught SyntaxError: missing ) after argument list
+var ans=eval(parseInt('234')+parseInt('3455))+'';
+VM46805:1 Uncaught SyntaxError: missing ) after argument list
+var ans=eval(parseInt('234')+parseInt('3455'))+'';
+undefined
+ans
+"3689"
+if(A=='A')
+    console.log('A')
+undefined
+if('A'=='A')
+    console.log('A')
+VM58124:2 A
+undefined
+class SemesterExternal{
+     constructor(sn, credit, subjectname, subjectid, subjectcode, subjectexternalm, subjectwholem) {
+         this.sn = '',
+             this.subjectname = '',
+             this.subjectid = '',
+             this.subjectcode = '',
+             this.subjectexternalm = '',
+             this.subjectwholem = '100'
+     }
+ }
+
+VM61362:1 Uncaught SyntaxError: Identifier 'SemesterExternal' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM61362:1
+class SemesterExternal2{
+     constructor(sn, credit, subjectname, subjectid, subjectcode, subjectexternalm, subjectwholem) {
+         this.sn = '',
+             this.subjectname = '',
+             this.subjectid = '',
+             this.subjectcode = '',
+             this.subjectexternalm = '',
+             this.subjectwholem = '100'
+     }
+ }
+
+undefined
+var se1 = new SemesterExternal2('1','23445','','',);
+undefined
+se1;
+SemesterExternal2 {sn: "", subjectname: "", subjectid: "", subjectcode: "", subjectexternalm: "", …}
+var s=[1,2,3,4];
+undefined
+s
+(4) [1, 2, 3, 4]
+s.slice()
+(4) [1, 2, 3, 4]
+s.slice(0)
+(4) [1, 2, 3, 4]
+s.slice(0,0)
+[]
+s=[]
+[]
+s
+[]
+Navigated to about:blank
+var e={}
+undefined
+for (var i=0;i<3;i++){e['l'+i]=i}
+2
+e
+{l0: 0, l1: 1, l2: 2}
