@@ -1,0 +1,287 @@
+In Show Chart...
+VM937 custom.js:23 Array of % in h1 tag =   79.53,76.75,85.7,81.66,80.16,78 Value is  undefined
+Navigated to http://localhost:12345/dosearch
+VM981 custom.js:4 Do print...
+VM981 custom.js:21 In Show Chart...
+VM981 custom.js:23  79.53,76.75,85.7,81.66,80.16,78
+Navigated to http://localhost:12345/dosearch
+VM1051 custom.js:4 Do print...
+VM1051 custom.js:21 In Show Chart...
+VM1051 custom.js:23  79.53,76.75,85.7,81.66,80.16,78  %%  32
+var s=' 23,34'
+undefined
+s.slice(,)
+VM1165:1 Uncaught SyntaxError: Unexpected token ,
+s.trim()
+"23,34"
+var s=' 79.53,76.75,85.7,81.66,80.16,78';
+undefined
+s.trim
+ƒ trim() { [native code] }
+s.trim()
+"79.53,76.75,85.7,81.66,80.16,78"
+s;
+" 79.53,76.75,85.7,81.66,80.16,78"
+s= s.trim()
+"79.53,76.75,85.7,81.66,80.16,78"
+s
+"79.53,76.75,85.7,81.66,80.16,78"
+s.indexOf(')
+VM1419:1 Uncaught SyntaxError: Invalid or unexpected token
+s.indexOf(',')
+5
+s.slice(5)
+",76.75,85.7,81.66,80.16,78"
+Navigated to http://localhost:12345/dosearch
+VM1680 custom.js:5 Do print...
+VM1680 custom.js:24 In Show Chart...
+VM1680 custom.js:26  79.53,76.75,85.7,81.66,80.16,78  %%  32
+Navigated to http://localhost:12345/dosearch
+custom.js:5 Do print...
+custom.js:24 In Show Chart...
+custom.js:26  79.53,76.75,85.7,81.66,80.16,78  %%  32
+custom.js:27 Arrays of % =  ["STUDENT PERCENTAGE OF SEMESTER = 79.53 %"]0: "STUDENT PERCENTAGE OF SEMESTER = 79.53 %"length: 1__proto__: Array(0)
+var ArrayofPErcentage=[];
+undefined
+s;
+VM1813:1 Uncaught ReferenceError: s is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1813:1
+var s= ' 79.53,76.75,85.7,81.66,80.16,78';
+undefined
+s= trim();
+VM1904:1 Uncaught ReferenceError: trim is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1904:1
+s= s.trim();
+"79.53,76.75,85.7,81.66,80.16,78"
+s
+"79.53,76.75,85.7,81.66,80.16,78"
+for(let i=0;i<s.length;i++){console.log(i,s.charAt(i))}
+VM2070:1 0 "7"
+VM2070:1 1 "9"
+VM2070:1 2 "."
+VM2070:1 3 "5"
+VM2070:1 4 "3"
+VM2070:1 5 ","
+VM2070:1 6 "7"
+VM2070:1 7 "6"
+VM2070:1 8 "."
+VM2070:1 9 "7"
+VM2070:1 10 "5"
+VM2070:1 11 ","
+VM2070:1 12 "8"
+VM2070:1 13 "5"
+VM2070:1 14 "."
+VM2070:1 15 "7"
+VM2070:1 16 ","
+VM2070:1 17 "8"
+VM2070:1 18 "1"
+VM2070:1 19 "."
+VM2070:1 20 "6"
+VM2070:1 21 "6"
+VM2070:1 22 ","
+VM2070:1 23 "8"
+VM2070:1 24 "0"
+VM2070:1 25 "."
+VM2070:1 26 "1"
+VM2070:1 27 "6"
+VM2070:1 28 ","
+VM2070:1 29 "7"
+VM2070:1 30 "8"
+undefined
+for(let i=0;i<s.length;i++){
+ArrayofPErcentage.push(s.substring(i,s.indexOf(',')))
+s.slice(s.indexOf(','))
+console.log(i,s.charAt(i))}
+VM2362:4 0 "7"
+VM2362:4 1 "9"
+VM2362:4 2 "."
+VM2362:4 3 "5"
+VM2362:4 4 "3"
+VM2362:4 5 ","
+VM2362:4 6 "7"
+VM2362:4 7 "6"
+VM2362:4 8 "."
+VM2362:4 9 "7"
+VM2362:4 10 "5"
+VM2362:4 11 ","
+VM2362:4 12 "8"
+VM2362:4 13 "5"
+VM2362:4 14 "."
+VM2362:4 15 "7"
+VM2362:4 16 ","
+VM2362:4 17 "8"
+VM2362:4 18 "1"
+VM2362:4 19 "."
+VM2362:4 20 "6"
+VM2362:4 21 "6"
+VM2362:4 22 ","
+VM2362:4 23 "8"
+VM2362:4 24 "0"
+VM2362:4 25 "."
+VM2362:4 26 "1"
+VM2362:4 27 "6"
+VM2362:4 28 ","
+VM2362:4 29 "7"
+VM2362:4 30 "8"
+undefined
+AllPercentage
+["STUDENT PERCENTAGE OF SEMESTER = 79.53 %"]
+ArrayofPErcentage
+(31) ["79.53", "9.53", ".53", "53", "3", "", ",", ",7", ",76", ",76.", ",76.7", ",76.75", ",76.75,", ",76.75,8", ",76.75,85", ",76.75,85.", ",76.75,85.7", ",76.75,85.7,", ",76.75,85.7,8", ",76.75,85.7,81", ",76.75,85.7,81.", ",76.75,85.7,81.6", ",76.75,85.7,81.66", ",76.75,85.7,81.66,", ",76.75,85.7,81.66,8", ",76.75,85.7,81.66,80", ",76.75,85.7,81.66,80.", ",76.75,85.7,81.66,80.1", ",76.75,85.7,81.66,80.16", ",76.75,85.7,81.66,80.16,", ",76.75,85.7,81.66,80.16,7"]
+ArrayofPErcentage.filter((s)=>if(s.length<6 and s.length>5){console.log(s)});
+VM2592:1 Uncaught SyntaxError: Unexpected token if
+ArrayofPErcentage.filter((s)=>if(s.length<6 && s.length>5){console.log(s)});
+VM2652:1 Uncaught SyntaxError: Unexpected token if
+ArrayofPErcentage.forEach((s)=>if(s.length<6 && s.length>5){console.log(s)});
+VM2682:1 Uncaught SyntaxError: Unexpected token if
+ArrayofPErcentage.forEach(
+function(s){
+if(s.length<6 && s.length>5){
+   console.log(s)
+  }
+});
+undefined
+for (let i =0;i<ArrayofPErcentage.length;i++){
+ console.log(ArrayofPErcentage[i]);
+}
+VM3006:2 79.53
+VM3006:2 9.53
+VM3006:2 .53
+VM3006:2 53
+VM3006:2 3
+VM3006:2 
+VM3006:2 ,
+VM3006:2 ,7
+VM3006:2 ,76
+VM3006:2 ,76.
+VM3006:2 ,76.7
+VM3006:2 ,76.75
+VM3006:2 ,76.75,
+VM3006:2 ,76.75,8
+VM3006:2 ,76.75,85
+VM3006:2 ,76.75,85.
+VM3006:2 ,76.75,85.7
+VM3006:2 ,76.75,85.7,
+VM3006:2 ,76.75,85.7,8
+VM3006:2 ,76.75,85.7,81
+VM3006:2 ,76.75,85.7,81.
+VM3006:2 ,76.75,85.7,81.6
+VM3006:2 ,76.75,85.7,81.66
+VM3006:2 ,76.75,85.7,81.66,
+VM3006:2 ,76.75,85.7,81.66,8
+VM3006:2 ,76.75,85.7,81.66,80
+VM3006:2 ,76.75,85.7,81.66,80.
+VM3006:2 ,76.75,85.7,81.66,80.1
+VM3006:2 ,76.75,85.7,81.66,80.16
+VM3006:2 ,76.75,85.7,81.66,80.16,
+VM3006:2 ,76.75,85.7,81.66,80.16,7
+undefined
+s;
+"79.53,76.75,85.7,81.66,80.16,78"
+const IndexsofCommas=[];
+for (let i=0;i<s.length;i++){
+  if(s.charAt(i)==',')){
+  IndexsofCommas.push(i);
+}
+}
+VM3475:3 Uncaught SyntaxError: Unexpected token )
+const IndexsofCommas=[];
+for (let i=0;i<s.length;i++){
+  if(s.charAt(i)==','){
+  IndexsofCommas.push(i);
+}
+}
+undefined
+ IndexsofCommas;
+(5) [5, 11, 16, 22, 28]0: 51: 112: 163: 224: 28length: 5__proto__: Array(0)
+ArrayofPErcentage.slice(ArrayofPErcentage.length);
+[]
+ArrayofPErcentage;
+(31) ["79.53", "9.53", ".53", "53", "3", "", ",", ",7", ",76", ",76.", ",76.7", ",76.75", ",76.75,", ",76.75,8", ",76.75,85", ",76.75,85.", ",76.75,85.7", ",76.75,85.7,", ",76.75,85.7,8", ",76.75,85.7,81", ",76.75,85.7,81.", ",76.75,85.7,81.6", ",76.75,85.7,81.66", ",76.75,85.7,81.66,", ",76.75,85.7,81.66,8", ",76.75,85.7,81.66,80", ",76.75,85.7,81.66,80.", ",76.75,85.7,81.66,80.1", ",76.75,85.7,81.66,80.16", ",76.75,85.7,81.66,80.16,", ",76.75,85.7,81.66,80.16,7"]
+ArrayofPErcentage.splice()
+[]
+ArrayofPErcentage=[];
+[]
+ArrayofPErcentage
+[]
+ArrayofPErcentage.push(s.substring(0,IndexsofCommas[0]));
+for (let i=0;i<IndexsofCommas.length;i++){
+  ArrayofPErcentage.push(s.substring(IndexsofCommas[i]+1,IndexsofCommas[i+1]));
+}
+6
+ArrayofPErcentage;
+(6) ["79.53", "76.75", "85.7", "81.66", "80.16", "78"]
+s;
+"79.53,76.75,85.7,81.66,80.16,78"
+ArrayofPErcentage=[]
+[]
+ArrayofPErcentage.push(s.substring(0,IndexsofCommas[0]));
+for (let i=0;i<IndexsofCommas.length;i++){
+  ArrayofPErcentage.push(s.substring(IndexsofCommas[i]+1,IndexsofCommas[i+1]));
+ console.log(s.substring(IndexsofCommas[i]+1,IndexsofCommas[i+1]));
+}
+VM4457:4 76.75
+VM4457:4 85.7
+VM4457:4 81.66
+VM4457:4 80.16
+VM4457:4 78
+undefined
+ArrayofPErcentage=[]
+[]
+ArrayofPErcentage.push(s.substring(0,IndexsofCommas[0]));
+for (let i=0;i<IndexsofCommas.length;i++){
+  ArrayofPErcentage.push(s.substring(IndexsofCommas[i]+1,IndexsofCommas[i+1]));
+ console.log(s.substring(IndexsofCommas[i]+1,IndexsofCommas[i+1]),i);
+}
+VM4752:4 76.75 0
+VM4752:4 85.7 1
+VM4752:4 81.66 2
+VM4752:4 80.16 3
+VM4752:4 78 4
+undefined
+ArrayofPErcentage=[]
+[]
+ArrayofPErcentage.push(s.substring(0,IndexsofCommas[0]));
+for (let i=0;i<IndexsofCommas.length;i++){
+  ArrayofPErcentage.push(s.substring(IndexsofCommas[i]+1,IndexsofCommas[i+1]));
+ console.log(s.substring(IndexsofCommas[i]+1,IndexsofCommas[i+1]),iIndexsofCommas[i]+1,IndexsofCommas[i+1]);
+}
+VM4919:4 Uncaught ReferenceError: iIndexsofCommas is not defined
+    at <anonymous>:4:67
+(anonymous) @ VM4919:4
+ArrayofPErcentage.push(s.substring(0,IndexsofCommas[0]));
+for (let i=0;i<IndexsofCommas.length;i++){
+  ArrayofPErcentage.push(s.substring(IndexsofCommas[i]+1,IndexsofCommas[i+1]));
+ console.log(s.substring(IndexsofCommas[i]+1,IndexsofCommas[i+1]),i,IndexsofCommas[i]+1,IndexsofCommas[i+1]);
+}
+VM4939:4 76.75 0 6 11
+VM4939:4 85.7 1 12 16
+VM4939:4 81.66 2 17 22
+VM4939:4 80.16 3 23 28
+VM4939:4 78 4 29 undefined
+undefined
+ArrayofPErcentage;
+(8) ["79.53", "76.75", "79.53", "76.75", "85.7", "81.66", "80.16", "78"]
+ArrayofPErcentage.pop();
+"78"
+ArrayofPErcentage=[]
+[]
+ArrayofPErcentage.push(s.substring(0,IndexsofCommas[0]));
+for (let i=0;i<IndexsofCommas.length;i++){
+  ArrayofPErcentage.push(s.substring(IndexsofCommas[i]+1,IndexsofCommas[i+1]));
+ console.log(s.substring(IndexsofCommas[i]+1,IndexsofCommas[i+1]),i,IndexsofCommas[i]+1,IndexsofCommas[i+1]);
+}
+VM5067:4 76.75 0 6 11
+VM5067:4 85.7 1 12 16
+VM5067:4 81.66 2 17 22
+VM5067:4 80.16 3 23 28
+VM5067:4 78 4 29 undefined
+undefined
+ArrayofPErcentage;
+(6) ["79.53", "76.75", "85.7", "81.66", "80.16", "78"]
+var s='123,4455';
+undefined
+s.substring(2)
+"3,4455"
