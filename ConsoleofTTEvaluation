@@ -1,0 +1,155 @@
+// Find Unique Array
+undefined
+var SS=['s','s','s','f','e'];
+undefined
+var newSS= SS.unique();
+VM29274:1 Uncaught TypeError: SS.unique is not a function
+    at <anonymous>:1:15
+(anonymous) @ VM29274:1
+SS.filter(function(a,b,c){
+console.log(a,b,c);
+});
+VM29440:2 s 0 (5) ["s", "s", "s", "f", "e"]
+VM29440:2 s 1 (5) ["s", "s", "s", "f", "e"]
+VM29440:2 s 2 (5) ["s", "s", "s", "f", "e"]
+VM29440:2 f 3 (5) ["s", "s", "s", "f", "e"]
+VM29440:2 e 4 (5) ["s", "s", "s", "f", "e"]
+[]
+SS.filter(function(a,b,c){
+console.log(a,b,c);
+return c.indexOf(a)===b;
+});
+VM29646:2 s 0 (5) ["s", "s", "s", "f", "e"]
+VM29646:2 s 1 (5) ["s", "s", "s", "f", "e"]
+VM29646:2 s 2 (5) ["s", "s", "s", "f", "e"]
+VM29646:2 f 3 (5) ["s", "s", "s", "f", "e"]
+VM29646:2 e 4 (5) ["s", "s", "s", "f", "e"]
+(3) ["s", "f", "e"]
+[...set(SS)]
+VM29685:1 Uncaught ReferenceError: set is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM29685:1
+var s1=[1,3,3,4,2,4,5];
+undefined
+[... new Set(s1)];
+(5) [1, 3, 4, 2, 5]
+var s={};
+undefined
+s.length
+undefined
+Object.length(s);
+VM37780:1 Uncaught TypeError: Object.length is not a function
+    at <anonymous>:1:8
+(anonymous) @ VM37780:1
+class AD{
+
+}
+undefined
+class AD{
+constructor(a,b){this.a=a;this.b=b;}
+}
+VM50647:1 Uncaught SyntaxError: Identifier 'AD' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM50647:1
+class AD1{
+constructor(a,b){this.a=a;this.b=b;}
+}
+undefined
+var ad1= new AD1(2,3);
+undefined
+var ad2= new AD1(1,2);
+undefined
+var ad3 = new AD1(0,4);
+undefined
+var arrAD=[];
+undefined
+ad1
+AD1 {a: 2, b: 3}
+arrAD.push(ad1); arrAD.push(ad2); arrAD.push(ad3);
+3
+arrAD
+(3) [AD1, AD1, AD1]0: AD1 {a: 2, b: 3}1: AD1 {a: 1, b: 2}2: AD1 {a: 0, b: 4}length: 3__proto__: Array(0)
+var SortB= arrAD.sort((a,b)=>{return a.b-b.b;});
+undefined
+SortB;
+(3) [AD1, AD1, AD1]0: AD1 {a: 1, b: 2}1: AD1 {a: 2, b: 3}2: AD1 {a: 0, b: 4}length: 3__proto__: Array(0)
+var SortA= arrAD.sort((a,b)=>{return a.a-b.a;});
+undefined
+SortA
+(3) [AD1, AD1, AD1]0: AD1 {a: 0, b: 4}1: AD1 {a: 1, b: 2}2: AD1 {a: 2, b: 3}length: 3__proto__: Array(0)
+ class SortCounty {
+    constructor(name, nop, mhp, mlp, mmp) {
+        this.name = name;
+        this.nop = nop;
+        this.mhp = mhp;
+        this.mlp = mlp;
+        this.mmp = mmp;
+    }
+}
+undefined
+var SC1= new SortCounty('Bulgaria',1, 0,0,1);
+undefined
+var SC1= new SortCounty('Bulgaria',1, 0,0,1);
+var SC1= new SortCounty('Bulgaria',1, 0,0,1);
+var SC1= new SortCounty('Bulgaria',1, 0,0,1);
+undefined
+SC1;
+SortCounty {name: "Bulgaria", nop: 1, mhp: 0, mlp: 0, mmp: 1}
+var SC2= new SortCounty('Bu',7, 0,2,5);
+var SC3= new SortCounty('Bulgaria',8, 0,5,3);
+var SC4= new SortCounty('Bulgaria',9, 0,5,3);
+var SC5= new SortCounty('Bulgaria',4, 0,1,3);
+var SC6= new SortCounty('Bulgaria',10, 1,7,2);
+var SC7= new SortCounty('Bulgaria',7, 0,5,2);
+var SC8= new SortCounty('Bulgaria',3, 0,1,2);
+undefined
+var ArratTop5=[];
+undefined
+ArratTop5.push(SC1);
+ArratTop5.push(SC1);
+ArratTop5.push(SC1);
+
+3
+ArratTop5=[];
+[]
+ArratTop5
+[]
+ArratTop5.push(SC1);
+ArratTop5.push(SC2);
+ArratTop5.push(SC3);
+ArratTop5.push(SC4);
+ArratTop5.push(SC5);
+ArratTop5.push(SC6);
+ArratTop5.push(SC7);
+ArratTop5.push(SC8);
+
+8
+ArratTop5
+(8) [SortCounty, SortCounty, SortCounty, SortCounty, SortCounty, SortCounty, SortCounty, SortCounty]0: SortCounty {name: "Bulgaria", nop: 1, mhp: 0, mlp: 0, mmp: 1}1: SortCounty {name: "Bu", nop: 7, mhp: 0, mlp: 2, mmp: 5}2: SortCounty {name: "Bulgaria", nop: 8, mhp: 0, mlp: 5, mmp: 3}3: SortCounty {name: "Bulgaria", nop: 9, mhp: 0, mlp: 5, mmp: 3}4: SortCounty {name: "Bulgaria", nop: 4, mhp: 0, mlp: 1, mmp: 3}5: SortCounty {name: "Bulgaria", nop: 10, mhp: 1, mlp: 7, mmp: 2}6: SortCounty {name: "Bulgaria", nop: 7, mhp: 0, mlp: 5, mmp: 2}7: SortCounty {name: "Bulgaria", nop: 3, mhp: 0, mlp: 1, mmp: 2}length: 8__proto__: Array(0)
+ var SortNOP = ArratTop5.sort(function(a, b){
+            return b.nop - a.nop;
+        });
+undefined
+SortNOP;
+(8) [SortCounty, SortCounty, SortCounty, SortCounty, SortCounty, SortCounty, SortCounty, SortCounty]0: SortCounty {name: "Bulgaria", nop: 10, mhp: 1, mlp: 7, mmp: 2}1: SortCounty {name: "Bulgaria", nop: 9, mhp: 0, mlp: 5, mmp: 3}2: SortCounty {name: "Bulgaria", nop: 8, mhp: 0, mlp: 5, mmp: 3}3: SortCounty {name: "Bu", nop: 7, mhp: 0, mlp: 2, mmp: 5}4: SortCounty {name: "Bulgaria", nop: 7, mhp: 0, mlp: 5, mmp: 2}5: SortCounty {name: "Bulgaria", nop: 4, mhp: 0, mlp: 1, mmp: 3}6: SortCounty {name: "Bulgaria", nop: 3, mhp: 0, mlp: 1, mmp: 2}7: SortCounty {name: "Bulgaria", nop: 1, mhp: 0, mlp: 0, mmp: 1}length: 8__proto__: Array(0)
+ SortNOP.forEach((a) => {
+            console.log(a.nop, typeof a.nop);
+        });
+VM54750:2 10 "number"
+VM54750:2 9 "number"
+VM54750:2 8 "number"
+2VM54750:2 7 "number"
+VM54750:2 4 "number"
+VM54750:2 3 "number"
+VM54750:2 1 "number"
+undefined
+var s=NaN;
+undefined
+typeof s
+"number"
+typeof NaN
+"number"
+var s=''-3;
+undefined
+s
+-3
