@@ -1,0 +1,234 @@
+// File Upload mooduls
+// const fileUpload = require('express-fileupload');
+// app.use(fileUpload());
+// const fileParser = require('express-multipart-file-parser')
+// app.use(fileParser);
+
+// const formidable = require('express-formidable'); 
+// app.use(formidable());
+var multer = require( 'multer');
+var upload = multer();
+app.use(upload.array());
+
+
+// Request ManageMent Service
+
+const requestDBOperation = require('../../../../models/request');
+const countryDBOperation = require('../../../../models/country');
+const router = require('express').Router();
+const axios = require('axios');
+// Current Date and Time 
+var datetime = require('node-datetime');
+var dt = datetime.create();
+var DateTimeIST = dt.format('Y-m-d H:M:S');
+//New nexus
+var validators = require('../../../../utils/validators');
+var validationError = require('../../../../utils/errors').validationError;
+var sendErrorResp = require('../../../../utils/errors').sendErrorResp;
+
+// /rqms/request/create
+// /rqms/request/get/
+// /rqms/country/list
+// Errors and Messages from Constants access
+var errorConstants = require('../../../../constants/errors');
+var messageConstants = require('../../../../constants/messages');
+
+// Import custom validators
+const customValidators = require('../../../../utils/prototypes');
+// Authentication JWT middleware access
+// var isAuth = require('../../../utils/middlewares').isUserAuthenticated;
+router.post('/createupdate', async (req, res, next) => {
+    console.log('outside try', req.headers.authorization);
+    // customValidators.prototype.customFormats
+    // try {
+    //     if (!req.headers) {
+    //         return messageConstants.ERROR_TOKEN_AUTH;
+    //     }
+    //     const token = req.headers.authorization;
+    //     console.log(process.env.IMS_SERVICE + '/user/profile');
+
+    //     var header = {
+    //         headers: {
+    //             Authorization: token
+    //         }
+    //     };
+    //     let info = await axios.get(process.env.IMS_SERVICE + '/user/profile', header);
+    //     const userIms = info.data;
+    //     console.log('is authorized :yes', userIms);
+    //     if (!userIms) {
+    //         return messageConstants.ERROR_UNAUTHORIZED_ACCESS_TOKEN;
+    //     }
+    //     UserObjectId = userIms.user._id;
+    // }
+    // catch (err) {
+    //     return sendErrorResp(res, err);
+    // }
+    try {
+        // console.log('inside try', UserObjectId);
+        var validate = validators.CreateRequest(req.body);
+        // Check body is valid or not
+        if (validate.valid) {
+            console.log('body is', req.body);
+            var territories  =req.body.territories ;
+            console.log(typeof territories);
+            territories.trim();
+            console.log(typeof territories);
+            var nTerritories = JSON.parse(territories);
+            console.log(nTerritories);
+            if (await countryDBOperation.isValidTerritoriesCodes(JSON.parse(req.body.territories.trim()))) {
+                territories = JSON.parse(req.body.territories);
+            }
+            else {
+                return sendErrorResp(res, null, "Invalid format of territories values.");
+            }
+            const UserObjectId = req.body.ims_userId;
+            const requestDesc = req.body.requestDesc;
+            const status = req.body.status;
+            const deleted = false;
+            const industries = JSON.parse(req.body.industries.trim());
+            var dms_documents;
+            if(!req.body.dms_documents){
+                dms_documents =[];
+            }
+            else{
+                dms_documents = JSON.parse(req.body.dms_documents.trim());
+            }
+            const requestId = req.body.requestId;
+            var createdOn;
+            var createdBy;
+            var updatedBy;
+            var updatedOn;
+            var output = {}, message;
+            console.log('User ID type', typeof UserObjectId);
+            // Do create a request
+            if (!requestId) {
+                createdOn = new Date();
+                createdBy = UserObjectId;
+                updatedBy = null;
+                updatedOn = null;
+                try {
+                    let info = await requestDBOperation.createRequestObj(requestDesc, status, deleted, industries, territories, dms_documents, createdOn, createdBy, updatedOn, updatedBy);
+                    message = "Request Created Successfully!";
+                    output.requestId = info[0]._id;
+
+                }
+                catch (err) {
+                    message = "Something went Wrong. Please try again.";
+                    return sendErrorResp(res, err, message);
+                }
+
+            }
+            // Do update a request
+            else {
+                if (customValidators.customObject(requestId)) {
+                    createdOn = new Date();
+                    createdBy = UserObjectId;
+                    updatedOn = new Date();
+                    updatedBy = UserObjectId;
+                    try {
+                        output = await requestDBOperation.updateReqUpdateByID(requestId, requestDesc, status, deleted, industries, territories, dms_documents, createdOn, createdBy, updatedOn, updatedBy);
+                        message = "Request Updated Successfully!";
+                    }
+                    catch (err) {
+                        message = "Something went Wrong. Please try again.";
+                        return sendErrorResp(res, err, message);
+                    }
+                }
+                else {
+                    return sendErrorResp(res, null, "Invalid format of requestId.");
+                }
+
+
+            }
+
+            console.log('output is ', output);
+            return await res.json({ "status": "success", "sub_status": null, "msg": message, "data": output });
+
+
+        }
+        else {
+            return validationError(res, validate.errors)
+        }
+    }
+    catch (err) {
+        //TODO: ADD EXCEPTION LOGGER HERE
+        return sendErrorResp(res, err);
+    }
+});
+
+
+ 
+router.post('/list/', async (req, res, next) => {
+    console.log('in fetch id ', req.body);
+
+    try {
+        var validate = validators.listByRequestId(req.body);
+
+        if (validate.valid) {
+            const requestId = req.body.requestId;
+            // Request ID is blank OR Fetch list of all request 
+            if (!requestId) {
+                try {
+                    let info = await requestDBOperation.findRequests();
+                    if (info == null) {
+
+                        return res.json({
+                            "status": "error",
+
+                            "sub_status": null, "msg": "Fetch Request list UnSuccessfully!", "data": info
+                        })
+                    }
+                    for (let i in info) {
+                        console.log('list is', info[i]["_id"]);
+                        // Rename _id to "requestId"
+
+                        delete Object.assign(info[i]._doc, { ["requestId"]: info[i]._doc["_id"] })["_id"];
+                        delete Object.assign(info[i]._doc, { ["title"]: info[i]._doc["requestDesc"] })["requestDesc"]; 
+
+                    }
+
+                    return res.json({ "status": "success", "sub_status": null, "msg": "Fetch Request list Successfully!", "data": info });
+                }
+                catch (err) {
+                    //TODO: ADD EXCEPTION LOGGER HERE
+                    return sendErrorResp(res, err);
+                }
+            }
+            // Request ID is exist OR Fetch a request 
+            else {
+                // Validation on Request ID
+                if (customValidators.customObject(requestId)) {
+                    // Request ID is VALID
+                    let info = await requestDBOperation.findRequestById(requestId);
+                    console.log(info);
+
+                    if (info == null) {
+
+                        return res.json({
+                            "status": "error",
+
+                            "sub_status": null, "msg": "Fetch Request Unsuccessfully!", "data": info
+                        })
+                    }
+                    // Rename _id to "requestId"
+                    delete Object.assign(info._doc, { ["requestId"]: info._doc["_id"] })["_id"];
+                    delete Object.assign(info._doc, { ["title"]: info._doc["requestDesc"] })["requestDesc"]; 
+                    return res.json({ "status": "success", "sub_status": null, 'msg': "Fetch Request Successfully!", data: [info] });
+                }
+                else {
+                    // Request ID is INVALID
+                    return sendErrorResp(res, null, "Invalid format of requestId.");
+                }
+            }
+
+        }
+        else {
+            return validationError(res, validate.errors);
+        }
+    }
+    catch (err) {
+        return sendErrorResp(res, err);
+    }
+
+});
+module.exports = router;
